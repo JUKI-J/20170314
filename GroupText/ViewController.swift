@@ -153,7 +153,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         do {
             let searchResults = try context.fetch(fetchRequest)
             print ("num of results = \(searchResults.count)")
-            let maxGroupNo:String = (searchResults.last?.groupNo)!
+            print(searchResults)
+            var maxGroupNo:String = String()
+            if searchResults.last?.groupNo != nil {
+                maxGroupNo = (searchResults.last?.groupNo)!
+            }else{
+                maxGroupNo = "0"
+            }
+            
             let addOne = "\(Int(maxGroupNo)! + 1)"
             return addOne
         } catch {
