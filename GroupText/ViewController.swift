@@ -45,12 +45,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func nextView(_ sender: Any) {
-        let messageView = self.storyboard!.instantiateViewController(withIdentifier: "messageView")
-        messageView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        self.present(messageView, animated: true, completion: nil)
-    }
-    
     @IBAction func addGroupBtn(_ sender: Any) {
          alertGroupWindow()
     }
@@ -82,7 +76,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let selectedIndex = indexPath.item
         let groupInfo = groupInfoResults[selectedIndex]
         if let addGroupView = self.storyboard?.instantiateViewController(withIdentifier: "addGroupView"){
-            addGroupView.title = "Contacts"
+            addGroupView.title = groupInfo.groupName
             addGroupView.setValue(groupInfo, forKey: "groupInfo")
             self.navigationController?.pushViewController(addGroupView, animated: true)
         }
