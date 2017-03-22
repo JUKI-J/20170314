@@ -36,14 +36,20 @@ class AddGroupViewController: UIViewController, UITableViewDelegate, UITableView
         getContactsInfoByGroupNo()
         tableView.reloadData()
         
-        for i in 0...contactInfo.count-1 {
-            let cell = self.tableView.cellForRow(at: [0,i])
-            cell?.imageView?.image = UIImage.init()
-            if cell?.imageView?.image == UIImage(named: "test"){
-                selectedCount+=1
+        if contactInfo.count>0 {
+            for i in 0...contactInfo.count-1 {
+                let cell = self.tableView.cellForRow(at: [0,i])
+                cell?.imageView?.image = UIImage.init()
+                if cell?.imageView?.image == UIImage(named: "test"){
+                    selectedCount+=1
+                }
             }
+            countLabel.text = "\(selectedCount)/\(contactInfo.count)"
+        }else{
+            countLabel.text = "0/0"
         }
-        countLabel.text = "\(selectedCount)/\(contactInfo.count)"
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupText/AddGroupViewController.swift"
-            timestampString = "511425736.343398"
+            timestampString = "511840508.378828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "getContacts(identifiers:)"
             landmarkType = "7">
          </BreakpointContent>
